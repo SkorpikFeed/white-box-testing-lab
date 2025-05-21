@@ -142,7 +142,10 @@ for i, path in enumerate(paths, 1):
 # Створюємо копію графа з простими атрибутами для dot-формату
 G_dot = nx.DiGraph()
 for node, data in G.nodes(data=True):
-    G_dot.add_node(node, label=data['label'])
+    original_label = data.get('original_label', data['label'])
+    if isinstance(original_label, str):
+        safe_label = original_label.replace('"', '\\"').replace(':', '_')
+        G_dot.add_node(node, label=safe_label)
 for u, v in G.edges():
     G_dot.add_edge(u, v)
 
