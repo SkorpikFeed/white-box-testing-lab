@@ -1,0 +1,15 @@
+strict digraph {
+n0 [label="Statement 0"];
+n1 [label="Statement 1"];
+n2 [label="Statement 2"];
+n3 [label="Statement 3"];
+n4 [label="Statement 4"];
+n5 [label="Statement 5"];
+n6 [label="Statement 6"];
+n0 -> n1;
+n1 -> n2;
+n2 -> n3;
+n3 -> n4;
+n4 -> n5;
+n5 -> n6;
+}
